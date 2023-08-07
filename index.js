@@ -76,6 +76,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 chart1.container(id);
                 chart1.height("100%");
                 chart1.draw();
+                chart1.listen("chartDraw", function() {
+                  if (typeof(callPhantom) == 'function') {
+                    return callPhantom(-1);
+                  }      
+                });
               } else {
                 const barData = [...graphData.map((d) => ({ x: d[0], value: d[1] }))];
                 const chart1 = anychart.column();
@@ -123,6 +128,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 chart1.container(id);
                 chart1.height("100%");
                 chart1.draw();
+                chart1.listen("chartDraw", function() {
+                  if (typeof(callPhantom) == 'function') {
+                    return callPhantom(-1);
+                  }      
+                });
               }
               break;
             }
@@ -140,6 +150,11 @@ document.addEventListener("DOMContentLoaded", function () {
               chart1.container(id);
               chart1.height("100%");
               chart1.draw();
+              chart1.listen("chartDraw", function() {
+                if (typeof(callPhantom) == 'function') {
+                  return callPhantom(-1);
+                }      
+              });
               break;
             }
             case "line": {
@@ -191,6 +206,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 chart1.container(id);
                 chart1.height("100%");
                 chart1.draw();
+                chart1.listen("chartDraw", function() {
+                  if (typeof(callPhantom) == 'function') {
+                    return callPhantom(-1);
+                  }      
+                });
               } else {
                 const barData = [...graphData.map((d) => ({ x: d[0], value: d[1] }))];
                 const chart1 = anychart.line();
@@ -239,6 +259,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 chart1.container(id);
                 chart1.height("100%");
                 chart1.draw();
+                chart1.listen("chartDraw", function() {
+                  if (typeof(callPhantom) == 'function') {
+                    return callPhantom(-1);
+                  }      
+                });
               }
               break;
             }
